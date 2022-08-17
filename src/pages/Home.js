@@ -1,5 +1,4 @@
-import './Home.css';
-import Hero from './assets/hero3.png';
+import Hero from '../assets/hero3.png';
 
 const Home = () => {
   return (
@@ -19,7 +18,7 @@ const Home = () => {
             </button>
           </div>
           <div className="hero__right col-start-8 col-end-13">
-            <img src={Hero} />
+            <img alt="" src={Hero} />
           </div>
         </div>
       </div>

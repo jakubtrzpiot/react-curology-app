@@ -15,7 +15,6 @@ export default function Login() {
     register,
     formState: { errors },
     handleSubmit,
-    watch,
   } = useForm();
   const navigate = useNavigate();
   const onSubmit = (data) => {
@@ -23,13 +22,12 @@ export default function Login() {
       .then(() => {
         navigate('/dashboard', { replace: true });
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+      .catch((err) => {
+        console.log(err);
       });
   };
   return (
-    <div className="grid grid-cols-12 mx-auto gap-20">
+    <div className="grid grid-cols-12 mx-auto gap-20 -mt-[120px]">
       <div className="login__left col-start-2 col-end-7">
         <div className="login__left__back mt-20 cursor-pointer text-inactive text-lg">
           <Link to="/" className="hover:text-primary">
@@ -107,6 +105,7 @@ export default function Login() {
       </div>
       <div className="login__right col-start-7 col-end-13">
         <img
+          alt=""
           src={image}
           className="object-cover object-bottom h-screen w-full"
         />

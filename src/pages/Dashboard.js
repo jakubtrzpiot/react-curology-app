@@ -10,7 +10,7 @@ export default function Dashboard() {
     onAuthStateChanged(auth, (user) => {
       user ? setEmail(user.email) : navigate('/login');
     });
-  }, []);
+  }, [navigate]);
   const onSignOut = () => {
     signOut(auth)
       .then(() => {})

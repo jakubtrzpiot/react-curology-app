@@ -36,9 +36,8 @@ export default function Signup() {
       .then(() => {
         navigate('/dashboard', { replace: true });
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
+      .catch((err) => {
+        console.log(err);
       });
   };
   const handleGoogle = () => {
@@ -64,7 +63,7 @@ export default function Signup() {
     //   });
   };
   return (
-    <div className="grid grid-cols-12 mx-auto gap-20">
+    <div className="grid grid-cols-12 mx-auto gap-20 -mt-[120px]">
       <div className="signup__left col-start-2 col-end-7">
         <div className="signup__left__back mt-20 cursor-pointer text-inactive text-lg">
           <Link to="/" className="hover:text-primary">
@@ -174,14 +173,15 @@ export default function Signup() {
               className="flex justify-center block text-lg w-[500px] mt-8 py-6 text-inactive bg-white border-2 border-solid border-[#DFE5EC] transition rounded"
               onClick={handleGoogle}
             >
-              <img src={google} className="w-[27px] mr-[15px]" /> Sign in with
-              Google
+              <img alt="" src={google} className="w-[27px] mr-[15px]" /> Sign in
+              with Google
             </button>
           </div>
         </div>
       </div>
       <div className="signup__right col-start-7 col-end-13">
         <img
+          alt=""
           src={image}
           className="object-cover object-bottom h-screen w-full"
         />
