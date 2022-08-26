@@ -7,25 +7,25 @@ export default function Navbar() {
   const full = ['/signup', '/login'];
   return (
     <div
-      className={`fixed bg-white top-0 w-full ${
+      className={`fixed bg-white top-0 w-full z-50 ${
         full.includes(path) ? 'hidden' : 'block'
       }`}
     >
-      <div className="flex justify-center items-center h-[120px] max-w-[1280px] mx-auto">
+      <div className="flex justify-center py-8 items-center h-[120px] max-w-[1280px] mx-auto">
         <Link to="/" className="grow">
-          <img className="h-[33px]" alt="" src={logo} />
+          <img className="h-[28px]" alt="" src={logo} />
         </Link>
-        <div className="flex gap-5 text-xl grow">
+        <div className="flex gap-5 grow">
           <Link to="/shop">Products</Link>
           <Link to="/">Why Curology</Link>
           <Link to="/">Reviews</Link>
           <Link to="/shop">Shop</Link>
         </div>
         <div>
-          <Link to="/login" className="py-6 px-12">
+          <Link to="/login" className="py-4 px-12">
             Log in
           </Link>
-          <Link to="/signup" className="bg-[#332E54] text-white py-6 px-12">
+          <Link to="/signup" className="bg-[#332E54] text-white py-4 px-12 rounded-md">
             Sign up
           </Link>
         </div>

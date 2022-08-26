@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "price": 5.99,
+    "image": "./products/acne-body-wash.png",
+    "description": "Body acne, handled. A splash of our acne-fighting body wash treats and helps prevent body breakouts—plus washes your pores of regular dirt and grime. Designed by dermatologists, our body wash is formulated with just enough salicylic acid to be tough on acne but kind to all skin types.",
+    "name": "Acne Body Wash",
+    "highlights": [
+      "Treats back acne, chest acne, and more",
+      "2% salicylic acid",
+      "Lightly-foaming formula for daily use",
+      "No fragrance or pore-clogging ingredients"
+    ]
+  },
+  {
+    "id": 2,
+    "price": 9.99,
+    "image": "./products/cleanser-moisturizer.png",
+    "description": "Your essential dermatologist-designed routine for clean, hydrated skin—everyday. Wash away dirt and excess oil with our light-foaming facial cleanser, then seal in hydration with your pick of our lightweight gel moisturizer or creamy, rich moisturizer. Easy.",
+    "name": "Cleanser & Moisturizer Combo",
+    "highlights": [
+      "Gentle, non-clogging, dermatologist-tested formulas",
+      "For all skin types, including acne-prone",
+      "Vegan and fragrance free"
+    ]
+  },
+  {
+    "id": 3,
+    "price": 69.99,
+    "image": "./products/custom-formula.png",
+    "description": "Help clear your skin with a personalized, Rx acne cream—prescribed for you by a dermatology provider. Your Curology Custom Formula is made with acne-busting ingredients picked for you, which can include tretinoin, azelaic acid, clindamycin, and more.",
+    "name": "Custom FormulaRX For Acne",
+    "highlights": [
+      "Results in 90 days, or get your $ back",
+      "Free online access to a dermatology provider",
+      "Easy bi-monthly deliveries of your routine"
+    ]
+  },
+  {
+    "id": 4,
+    "price": 420.99,
+    "image": "./products/emergency-spot-patch.png",
+    "description": "Sudden acne spot? We've got skin emergencies covered with fast-acting hydrocolloid patches that absorb pus and oil. Plus, they’re low profile to help spots heal—whenever, wherever.",
+    "name": "Emergency Spot Patch For Acne",
+    "highlights": [
+      "Healing support for surprise spots",
+      "Thin enough to layer under makeup",
+      "Made for all skin types",
+      "Designed by dermatologists"
+    ]
+  },
+  {
+    "id": 5,
+    "price": 1337.99,
+    "image": "./products/lip-balm.png",
+    "description": "The only lip balm you need. Our radically intuitive, one-handed lip balm locks in lasting moisture—without the need for frequent reapplication. Take your pick of 3 unique flavors, or the original unflavored for sensitive skin.",
+    "name": "The lip balm",
+    "highlights": [
+      "Effortless, ultra hygienic one-handed lip balm for on-the-go use",
+      "Truly vegan, beeswax-free formula",
+      "Non-clogging, acne-friendly ingredients",
+      "No irritating or drying ingredients"
+    ]
+  }
+]

@@ -1,26 +1,18 @@
 import ReactDOM from 'react-dom/client';
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './index.css';
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Dashboard from './pages/Dashboard';
-import ProductPage from './pages/ProductPage';
-import Shop from './pages/Shop';
+import App from './App';
 import Navbar from './components/Navbar';
+import './index.css';
+import store from './app/store';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="shop" element={<Shop />} />
-      <Route path="shop/product/:id" element={<ProductPage />} />
-      <Route path="login" element={<Login />} />
-      <Route path="signup" element={<Signup />} />
-      <Route path="dashboard" element={<Dashboard />} />
-    </Routes>
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Navbar />
+      <App />
+    </BrowserRouter>
+  </Provider>,
 );

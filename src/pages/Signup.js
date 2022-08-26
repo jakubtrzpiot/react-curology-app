@@ -31,12 +31,12 @@ export default function Signup() {
   const provider = new GoogleAuthProvider();
 
   const navigate = useNavigate();
-  const onSubmit = (data) => {
+  const onSubmit = data => {
     createUserWithEmailAndPassword(auth, data.email_address, data.password)
       .then(() => {
         navigate('/dashboard', { replace: true });
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
   };
@@ -136,7 +136,7 @@ export default function Signup() {
                 <input
                   type="password"
                   {...register('re_password', {
-                    validate: (value) =>
+                    validate: value =>
                       value === password.current || 'Passwords do not match.',
                   })}
                   placeholder="Password"
@@ -164,10 +164,10 @@ export default function Signup() {
                 </p>
               </div>
             </form>
-            <div class="relative flex py-5 items-center w-[500px] mt-2">
-              <div class="flex-grow border-t border-gray-400"></div>
-              <span class="flex-shrink mx-4 text-gray-400">or</span>
-              <div class="flex-grow border-t border-gray-400"></div>
+            <div className="relative flex py-5 items-center w-[500px] mt-2">
+              <div className="flex-grow border-t border-gray-400"></div>
+              <span className="flex-shrink mx-4 text-gray-400">or</span>
+              <div className="flex-grow border-t border-gray-400"></div>
             </div>
             <button
               className="flex justify-center block text-lg w-[500px] mt-8 py-6 text-inactive bg-white border-2 border-solid border-[#DFE5EC] transition rounded"
