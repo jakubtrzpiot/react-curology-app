@@ -3,7 +3,7 @@ import React from 'react';
 import App from './App';
 import Navbar from './components/Navbar';
 import './index.css';
-import store from './app/store';
+import store from './redux/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
