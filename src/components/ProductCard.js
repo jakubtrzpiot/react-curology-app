@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function ProductList({ id, price, image, name }) {
+export default function ProductCard({ price, image, name, url_name }) {
   return (
-    <Link to={`/shop/product/${id}`}>
-      <div className="group relative">
-        <div className="w-full min-h-80 bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75 lg:h-90 lg:aspect-none">
+    <Link to={`/shop/product/${url_name}`}>
+      <div className="relative">
+        <div className="relative w-full min-h-80 bg-gray-200 rounded-md overflow-hidden lg:h-90 lg:aspect-none">
           <img
             src={image}
             alt={image}
-            className="w-full h-full object-center object-cover"
-          />
+            className="w-full h-full object-center object-cover hover:opacity-80 transition"
+          />{' '}
         </div>
         <div className="mt-4 flex justify-between">
           <div>

@@ -1,10 +1,13 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { add } from '../redux/shoppingCartSlice';
 import products from '../data/products.json';
 
 export default function ProductPage() {
-  let { id } = useParams();
-  const product = products.find(p => p.id == id);
+  const dispatch = useDispatch();
+  let { url_name } = useParams();
+  const product = products.find(p => p.url_name === url_name);
   return (
     <div className="bg-white">
       <div className="pt-6">
@@ -176,14 +179,23 @@ export default function ProductPage() {
               </div>
             </div>
 
-            <form className="mt-10">
+            <div className="mt-10">
               <button
-                type="submit"
-                className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                onClick={() =>
+                  dispatch(
+                    add({
+                      name: product.name,
+                      price: product.price,
+                      quantity: 1,
+                      id: product.id,
+                    }),
+                  )
+                }
+                className="mt-10 w-full bg-primary  border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 Add to bag
               </button>
-            </form>
+            </div>
           </div>
 
           <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
@@ -207,12 +219,6 @@ export default function ProductPage() {
                       </li>
                     );
                   })}
-
-                  {/* <li className="text-gray-400"><span className="text-gray-600">Dyed with our proprietary colors</span></li>
-
-              <li className="text-gray-400"><span className="text-gray-600">Pre-washed &amp; pre-shrunk</span></li>
-
-              <li className="text-gray-400"><span className="text-gray-600">Ultra-soft 100% cotton</span></li> */}
                 </ul>
               </div>
             </div>

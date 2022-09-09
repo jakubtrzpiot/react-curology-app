@@ -3,6 +3,7 @@
     "id": 1,
     "price": 5.99,
     "image": "./products/acne-body-wash.png",
+    "url_name": "acne-body-wash",
     "description": "Body acne, handled. A splash of our acne-fighting body wash treats and helps prevent body breakouts—plus washes your pores of regular dirt and grime. Designed by dermatologists, our body wash is formulated with just enough salicylic acid to be tough on acne but kind to all skin types.",
     "name": "Acne Body Wash",
     "highlights": [
@@ -16,6 +17,7 @@
     "id": 2,
     "price": 9.99,
     "image": "./products/cleanser-moisturizer.png",
+    "url_name": "cleanser-moisturizer-combo",
     "description": "Your essential dermatologist-designed routine for clean, hydrated skin—everyday. Wash away dirt and excess oil with our light-foaming facial cleanser, then seal in hydration with your pick of our lightweight gel moisturizer or creamy, rich moisturizer. Easy.",
     "name": "Cleanser & Moisturizer Combo",
     "highlights": [
@@ -28,6 +30,7 @@
     "id": 3,
     "price": 69.99,
     "image": "./products/custom-formula.png",
+    "url_name": "custom-formula-rx",
     "description": "Help clear your skin with a personalized, Rx acne cream—prescribed for you by a dermatology provider. Your Curology Custom Formula is made with acne-busting ingredients picked for you, which can include tretinoin, azelaic acid, clindamycin, and more.",
     "name": "Custom FormulaRX For Acne",
     "highlights": [
@@ -40,6 +43,7 @@
     "id": 4,
     "price": 420.99,
     "image": "./products/emergency-spot-patch.png",
+    "url_name": "emergency-spot-patch",
     "description": "Sudden acne spot? We've got skin emergencies covered with fast-acting hydrocolloid patches that absorb pus and oil. Plus, they’re low profile to help spots heal—whenever, wherever.",
     "name": "Emergency Spot Patch For Acne",
     "highlights": [
@@ -53,6 +57,7 @@
     "id": 5,
     "price": 1337.99,
     "image": "./products/lip-balm.png",
+    "url_name": "lip-balm",
     "description": "The only lip balm you need. Our radically intuitive, one-handed lip balm locks in lasting moisture—without the need for frequent reapplication. Take your pick of 3 unique flavors, or the original unflavored for sensitive skin.",
     "name": "The lip balm",
     "highlights": [
