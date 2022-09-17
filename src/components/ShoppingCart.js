@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 import {
   add,
@@ -10,12 +11,13 @@ import {
   sumTotal,
 } from '../redux/shoppingCartSlice';
 
-export default function ShoppingCart() {
-  const shop = useSelector(state => state.shoppingCart);
+export default function ShoppingCart(props) {
+  const shop = useSelector(cart => cart);
   const [hide, setHide] = useState(true);
   const hideCheckout = () => {
     setHide(!hide);
   };
+
   useEffect(() => {
     dispatch(sumTotal());
     setHide(shop.items.length ? false : true);
@@ -27,9 +29,9 @@ export default function ShoppingCart() {
       <AnimatePresence>
         {!hide && (
           <motion.div
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            exit={{opacity:0}}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             className="relative z-[1000]"
             aria-labelledby="slide-over-title"
             role="dialog"
@@ -100,8 +102,10 @@ export default function ShoppingCart() {
                                           <p className="ml-4">
                                             $
                                             {Math.abs(
-                                              item.price * item.quantity,
-                                            ).toFixed(2)}
+                                              parseFloat(
+                                                item.price * item.quantity,
+                                              ).toFixed(2),
+                                            )}
                                           </p>
                                         </div>
                                         <p className="mt-1 text-sm text-gray-500">
@@ -173,12 +177,13 @@ export default function ShoppingCart() {
                           Shipping and taxes calculated at checkout.
                         </p>
                         <div className="mt-6">
-                          <a
-                            href="#"
+                          <Link
+                            onClick={() => setHide(true)}
+                            to="/checkout"
                             className="flex items-center justify-center rounded-md border border-transparent bg-primary transition px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primary/90"
                           >
                             Checkout
-                          </a>
+                          </Link>
                         </div>
                         <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
                           <p>

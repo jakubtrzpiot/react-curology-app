@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/curology-logo.svg';
+import ShoppingCart from './ShoppingCart';
 
 export default function Navbar() {
+  const [showCart, setShowCart] = useState(false);
   const path = useLocation().pathname;
   const full = ['/signup', '/login'];
   return (
@@ -11,6 +13,7 @@ export default function Navbar() {
         full.includes(path) ? 'hidden' : 'block'
       }`}
     >
+      <ShoppingCart showCart={showCart} />
       <div className="flex justify-center py-8 items-center h-[120px] max-w-[1280px] mx-auto">
         <Link to="/" className="grow">
           <img className="h-[28px]" alt="" src={logo} />
@@ -31,7 +34,12 @@ export default function Navbar() {
           >
             Sign up
           </Link>
-          <div className="pl-8 cursor-pointer">
+          <div
+            onClick={() => {
+              setShowCart(true) && Location.reload();
+            }}
+            className="pl-8 cursor-pointer"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
