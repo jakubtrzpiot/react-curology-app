@@ -2285,6 +2285,18 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@stripe/react-stripe-js@^1.13.0":
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-1.13.0.tgz#8e0bde2b116870d2aca52976f46a92d81983e235"
+  integrity sha512-6v2VVYorWalmlHF5DIlHp5xtFzX9rY36N4d7kyS8D/4jxvZYHOKJj96LCQfwuFi/o19/dCX8rxt/ct+pF9kI8A==
+  dependencies:
+    prop-types "^15.7.2"
+
+"@stripe/stripe-js@^1.41.0":
+  version "1.41.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.41.0.tgz#986f3f222ba4466301f7809934afafafde9b28fd"
+  integrity sha512-9cbv1CO/fF37qDiHFCxkRgSJjlIZLV0bl+m6zu4dUObRnfYq5bpczCByOvhiSWtbrKqNhYL1j+otPSogRfSqGw==
+
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   version "2.2.3"
   resolved "https://registry.npmjs.org/@surma/rollup-plugin-off-main-thread/-/rollup-plugin-off-main-thread-2.2.3.tgz"
@@ -10609,7 +10621,7 @@ prompts@^2.0.1, prompts@^2.4.2:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.8.1:
+prop-types@^15.7.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==

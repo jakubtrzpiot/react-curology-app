@@ -1,33 +1,31 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
+import { setCart } from '../redux/shoppingCartSlice';
 import { Link } from 'react-router-dom';
 
 import {
-  add,
   remove,
   increment,
   decrement,
   sumTotal,
 } from '../redux/shoppingCartSlice';
 
-export default function ShoppingCart(props) {
+export default function ShoppingCart() {
   const shop = useSelector(cart => cart);
-  const [hide, setHide] = useState(true);
-  const hideCheckout = () => {
-    setHide(!hide);
-  };
-
+  const isOpen = shop.isOpen;
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(sumTotal());
-    setHide(shop.items.length ? false : true);
-  }, [shop.items.length, shop.total]);
+  }, [shop.total]);
+  useEffect(() => {
+    shop.items.length > 0 ? dispatch(setCart(true)) : dispatch(setCart(false));
+  }, []);
 
-  const dispatch = useDispatch();
   return (
     <div>
       <AnimatePresence>
-        {!hide && (
+        {isOpen ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -55,7 +53,7 @@ export default function ShoppingCart(props) {
                             <button
                               type="button"
                               className="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                              onClick={hideCheckout}
+                              onClick={() => dispatch(setCart(false))}
                             >
                               <span className="sr-only">Close panel</span>
                               <svg
@@ -87,8 +85,8 @@ export default function ShoppingCart(props) {
                                   <li className="flex py-6" key={id}>
                                     <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                       <img
-                                        src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg"
-                                        alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
+                                        src={item.image}
+                                        alt={item.image}
                                         className="h-full w-full object-cover object-center"
                                       />
                                     </div>
@@ -178,9 +176,13 @@ export default function ShoppingCart(props) {
                         </p>
                         <div className="mt-6">
                           <Link
-                            onClick={() => setHide(true)}
+                            onClick={() => dispatch(setCart(false))}
                             to="/checkout"
-                            className="flex items-center justify-center rounded-md border border-transparent bg-primary transition px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primary/90"
+                            className={`flex items-center justify-center rounded-md border border-transparent bg-primary transition px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primary/90 ${
+                              shop.items.length > 0
+                                ? ''
+                                : 'opacity-50 pointer-events-none'
+                            }`}
                           >
                             Checkout
                           </Link>
@@ -191,6 +193,7 @@ export default function ShoppingCart(props) {
                             <button
                               type="button"
                               className="font-medium text-indigo-600 hover:text-indigo-500"
+                              onClick={() => dispatch(setCart(false))}
                             >
                               Continue Shopping
                               <span aria-hidden="true"> &rarr;</span>
@@ -204,7 +207,7 @@ export default function ShoppingCart(props) {
               </div>
             </div>
           </motion.div>
-        )}
+        ) : null}
       </AnimatePresence>
     </div>
   );

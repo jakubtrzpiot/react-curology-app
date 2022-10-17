@@ -4,10 +4,14 @@ import { createSlice } from '@reduxjs/toolkit';
 export const shoppingCartSlice = createSlice({
   name: 'shoppingCart',
   initialState: {
+    isOpen: false,
     items: [],
     total: 0.0,
   },
   reducers: {
+    setCart: (state, { payload: isOpen }) => {
+      state.isOpen = isOpen;
+    },
     add: (state, { payload: item }) => {
       const items = JSON.parse(JSON.stringify(state.items));
       const itemIndex = items.findIndex(obj => obj.name === item.name);
@@ -40,7 +44,7 @@ export const shoppingCartSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { add, remove, increment, decrement, sumTotal } =
+export const { add, remove, increment, decrement, sumTotal, setCart } =
   shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;
